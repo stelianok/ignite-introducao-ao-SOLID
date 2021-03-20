@@ -1,0 +1,51 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "User documentation",
+        "description": "this is an User API",
+        "version": "1.0.0",
+        "contact": {
+            "email": "stelianok@gmail.com"
+        }
+    },
+    "paths": {
+        "categories": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Create an user",
+                "description": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "name surname",
+                                    "email": "email@provider.com"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "User already exists"
+                    }
+                }
+            }
+        }
+    }
+}
